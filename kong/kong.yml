@@ -62,6 +62,15 @@ services:
           - /auth/v1/authorize
     plugins:
       - name: cors
+  - name: auth-direct-verify
+    url: http://$AUTH_HOST:9999/verify
+    routes:
+      - name: auth-direct-verify-route
+        strip_path: false
+        paths:
+          - /verify
+    plugins:
+      - name: cors
 
   ## Secure Auth routes
   - name: auth-v1
