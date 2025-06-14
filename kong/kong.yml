@@ -63,7 +63,7 @@ services:
     plugins:
       - name: cors
   - name: auth-direct-verify
-    url:http://auth:9999/verify
+    url: http://auth:9999/verify
     routes:
       - name: auth-direct-verify-route
         strip_path: false
