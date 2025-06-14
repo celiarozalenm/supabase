@@ -36,7 +36,7 @@ basicauth_credentials:
 services:
   ## Open Auth routes
   - name: auth-v1-open
-    url: http://$AUTH_HOST:9999/verify
+    url: https://gotrue-auth-production-e484.up.railway.app
     routes:
       - name: auth-v1-open
         strip_path: true
@@ -45,7 +45,7 @@ services:
     plugins:
       - name: cors
   - name: auth-v1-open-callback
-    url: http://auth:9999/callback
+    url: https://gotrue-auth-production-e484.up.railway.app
     routes:
       - name: auth-v1-open-callback
         strip_path: true
@@ -54,7 +54,7 @@ services:
     plugins:
       - name: cors
   - name: auth-v1-open-authorize
-    url: http://auth:9999/authorize
+    url: https://gotrue-auth-production-e484.up.railway.app
     routes:
       - name: auth-v1-open-authorize
         strip_path: true
@@ -63,7 +63,7 @@ services:
     plugins:
       - name: cors
   - name: auth-direct-verify
-    url: http://auth:9999/verify
+    url: https://gotrue-auth-production-e484.up.railway.app
     routes:
       - name: auth-direct-verify-route
         strip_path: false
@@ -74,8 +74,8 @@ services:
 
   ## Secure Auth routes
   - name: auth-v1
-    _comment: 'GoTrue: /auth/v1/* -> http://auth:9999/*'
-    url: http://auth:9999/
+    _comment: 'GoTrue: /auth/v1/* -> https://gotrue-auth-production-e484.up.railway.app/*'
+    url: https://gotrue-auth-production-e484.up.railway.app/
     routes:
       - name: auth-v1-all
         strip_path: true
